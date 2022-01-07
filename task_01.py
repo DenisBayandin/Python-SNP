@@ -1,11 +1,17 @@
 marks = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ '
-def is_palindrome(str_input):
+def is_palindrome(string):
+    string = str(string)
     for i in marks:
-        if i in str_input:
-            str_input = str_input.replace(i, '')
-    if str_input.upper() == str_input[::-1].upper():
-        print(True)
+        if i in string:
+            string = string.replace(i, '')
+    if string.upper() == string[::-1].upper():
+        return True
     else:
-        print(False)
-str_input=input('Введите строку, которую вы хотите проверить:')
-is_palindrome(str_input)
+        return False
+
+
+print(is_palindrome("A man, a plan, a canal -- Panama"))
+print(is_palindrome("Madam, I'm Adam!"))
+print(is_palindrome(333))
+print(is_palindrome(None))
+print(is_palindrome("Abracadabra"))
